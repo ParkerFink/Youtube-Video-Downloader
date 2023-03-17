@@ -1,7 +1,12 @@
 from pytube import YouTube
 
+from cmd import Cmd
 
 
-url = str(input("video url: "))
+class Terminal(Cmd):
 
-yt = YouTube(url).streams.get_highestResolution().donwload()
+    def do_download(self, url):
+        yt = YouTube(url).streams.get_highestResolution().download('videos/')
+
+
+Terminal().cmdloop()
