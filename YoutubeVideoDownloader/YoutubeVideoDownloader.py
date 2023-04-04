@@ -27,6 +27,18 @@ class Terminal(Cmd):
         print("Downloads full playlist into videos folder")
         print("EX: playlist https://www.youtube.com/watch?v=-C_rvt0SwLE&list=PLaKNAbgyxAh0VD54wrttxVnxC7fYDchf2")
 
+    def do_list(self, path):
+        list = os.listdir('videos/' + path)
+        for video in list:
+            print(video)
+
+    def help_list(self):
+        print("lists all videos and or playlists in the videos folder")
+        print("EX: list")
+        print("EX2: list musicplaylist")
+
+
+
     def do_clear(self, blank):
         os.system('cls')
 
