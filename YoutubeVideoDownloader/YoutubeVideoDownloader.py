@@ -3,7 +3,6 @@ from pytube import Playlist
 from cmd import Cmd
 
 import os
-import webbrowser
 
 
 
