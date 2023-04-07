@@ -7,7 +7,7 @@ import webbrowser
 
 
 
-version = '1.2'
+version = '1.3'
 
 
 
@@ -53,6 +53,12 @@ class Terminal(Cmd):
        path = cwd + "/videos/"
        os.startfile(path + "/" + video)
 
+    def help_open(self):
+        print("Allows you to play a video from the terminal")
+        print("EX: open")
+        print("Which allows you to open the videos folder")
+        print("EX: open video.mp4")
+        print("Which allows you to play specific video from the terminal")
 
 
 
