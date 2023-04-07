@@ -3,10 +3,21 @@ from pytube import Playlist
 from cmd import Cmd
 
 import os
+import webbrowser
+
+
+
+version = '1.2'
+
 
 
 
 class Terminal(Cmd):
+
+    prompt = "v" + version + ">"
+
+
+
 
     def do_download(self, url):
         yt = YouTube(url).streams.get_highest_resolution().download('videos/')
@@ -37,6 +48,10 @@ class Terminal(Cmd):
         print("EX: list")
         print("EX2: list musicplaylist")
 
+    def do_open(self, video):
+       cwd = os.getcwd()
+       path = cwd + "/videos/"
+       os.startfile(path)
 
 
     def do_clear(self, blank):
