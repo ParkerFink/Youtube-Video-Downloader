@@ -51,7 +51,9 @@ class Terminal(Cmd):
     def do_open(self, video):
        cwd = os.getcwd()
        path = cwd + "/videos/"
-       os.startfile(path)
+       os.startfile(path + "/" + video)
+
+
 
 
     def do_clear(self, blank):
